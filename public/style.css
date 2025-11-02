@@ -1,0 +1,92 @@
+:root {
+  color-scheme: dark light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: #0f1220;
+  color: #e6e9ff;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+header {
+  padding: 12px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  border-bottom: 1px solid #232744;
+}
+header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+.hud { margin-left: auto; display: flex; gap: 16px; }
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 24px;
+}
+canvas#game {
+  background: #111426;
+  border: 1px solid #2a2f55;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.help { opacity: 0.8; margin-top: 12px; font-size: 14px; }
+
+/* Mobile controls */
+.mobile-toggle {
+  padding: 6px 10px;
+  border: 1px solid #2a2f55;
+  background: #161a33;
+  color: #e6e9ff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.mobile-toggle:hover { background: #1b2040; }
+
+.mobile-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+.mobile-controls .pad {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(21, 25, 46, 0.85);
+  border: 1px solid #2a2f55;
+  border-radius: 12px;
+  padding: 12px;
+  backdrop-filter: blur(6px);
+}
+.mobile-controls .dir {
+  width: 72px;
+  height: 72px;
+  font-size: 28px;
+  border-radius: 12px;
+  border: 1px solid #2a2f55;
+  background: #20264a;
+  color: #e6e9ff;
+  touch-action: none; /* avoid double-tap zoom and scrolling */
+}
+.mobile-controls .dir:active { background: #2a3160; }
+
+.mobile-controls .action {
+  height: 72px;
+  padding: 0 16px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #2a2f55;
+  background: #2c2540;
+  color: #ffd166;
+}
+.mobile-controls .action:active { background: #3a2e56; }
+
+/* Horizontal row centered at the bottom: Up, Right, Down, Left */

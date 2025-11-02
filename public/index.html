@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multiplayer Arena</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Multiplayer Arena</h1>
+      <div class="hud">
+        <span id="players">Players: 0</span>
+        <span id="score">Your score: 0</span>
+        <button id="mobileToggle" class="mobile-toggle" aria-controls="mobileControls" aria-expanded="false">Mobile Controls</button>
+      </div>
+    </header>
+    <main>
+      <canvas id="game" width="800" height="600" tabindex="0"></canvas>
+      <section class="help">
+        <p>Move with <strong>WASD</strong> or <strong>Arrow Keys</strong>. Collect dots to score.</p>
+      </section>
+      <div id="mobileControls" class="mobile-controls" hidden aria-hidden="true">
+        <div class="pad">
+          <button class="dir" data-dir="up" aria-label="Up">▲</button>
+          <button class="dir" data-dir="right" aria-label="Right">▶</button>
+          <button class="dir" data-dir="down" aria-label="Down">▼</button>
+          <button class="dir" data-dir="left" aria-label="Left">◀</button>
+          <button class="action" data-action="punch" aria-label="Punch">Punch</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+  </html>
